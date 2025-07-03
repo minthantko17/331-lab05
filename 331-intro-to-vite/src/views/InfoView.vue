@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import EventCard from '@/components/EventCard.vue';
-import EventCard2 from '@/components/EventCard2.vue';
-import type { Event } from '@/types';
+import StudentInfoCard from '@/components/StudentInfoCard.vue';
+import type { Student } from '@/types';
 import { ref, onMounted } from 'vue';
-import EventService from '@/services/EventService';
+import StudentService from '@/services/StudentService';
 
-const events= ref<Event[]>()
+const students= ref<Student[]>()
 
 onMounted(()=>{
-  EventService.getEvents()
+  StudentService.getStudents()
     .then((response)=>{
       // console.log(response.data)
-      events.value = response.data;
+      students.value = response.data;
     })
     .catch((error)=>{
       console.error('There was an error! ', error);
@@ -23,8 +22,7 @@ onMounted(()=>{
   <h1>Events For Good</h1>
   
   <div class="events">
-    <EventCard v-for="event in events" :key="event.id" :event="event" />
-    <EventCard2 v-for="event in events" :key="event.id" :event="event" />
+    <StudentInfoCard v-for="student in students" :key="student.id" :student="student" />
   </div>
 </template>
 
