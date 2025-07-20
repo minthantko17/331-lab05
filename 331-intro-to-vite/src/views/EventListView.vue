@@ -8,21 +8,27 @@ import EventService from '@/services/EventService';
 const events= ref<Event[] | null>()
 const totalEvents = ref(0)
 const props = defineProps({
+  perPage: {
+    type: Number,
+    required: true
+  },
   page: {
     type: Number,
     required: true
   }
 })
+
+const perPage = ref(props.perPage)
 const page = computed(()=> props.page)
 const hasNextPage = computed(()=>{
-  const totalPages = Math.ceil(totalEvents.value/2)
+  const totalPages = Math.ceil(totalEvents.value/perPage.value)
   return page.value<totalPages
 })
 
 onMounted(()=>{
   watchEffect(()=>{
     events.value=null
-    EventService.getEvents(2, page.value)
+    EventService.getEvents(perPage.value, page.value)
       .then((response)=>{
         // console.log(response.data)
         events.value = response.data;
@@ -37,6 +43,10 @@ onMounted(()=>{
 
 <template>
   <h1>Events For Good</h1>
+
+  <span>Items per page: </span>
+  <input type="number" min="1" max="3" v-model="perPage" />
+  <br><br>
   
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
