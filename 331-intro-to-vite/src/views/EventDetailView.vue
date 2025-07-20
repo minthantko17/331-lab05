@@ -8,11 +8,11 @@ const props = defineProps({
         required: true
     }
 })
-const event = ref<Event>()
+const event = ref<Event | null>()
 
 onMounted(()=> {
     // fetch
-    EventService.getEvent(props.id)
+    EventService.getEvent(parseInt(props.id))
         .then((response) => {
             event.value=response.data
         })
