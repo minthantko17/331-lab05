@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div class="event-class">
-    <div class="event-card">
+    <div class="event-card hover:scale-101 hover:shadow-sp">
         <span>{{ event.category }}</span>
         <br>
         <span>{{ event.organizer }}</span>
@@ -27,8 +27,8 @@ defineProps<{
     text-align: right;
   }
 
-  .event-card:hover{
+  /* .event-card:hover{
     transform: scale(1.01);
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
-  }
+  } */
 </style>
