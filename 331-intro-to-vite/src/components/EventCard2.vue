@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div class="event-class">
-    <div class="cursor-pointer border border-gray-600 p-4 w-64 mb-6 hover:scale-101 hover:shadow-sp">
+    <div class="cursor-pointer border border-gray-600 p-[20px] w-[250px] mb-[18px] hover:scale-101 hover:shadow-sp">
         <span>{{ event.category }}</span>
         <br>
         <span>{{ event.organizer }}</span>
