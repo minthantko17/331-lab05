@@ -12,7 +12,7 @@ const { message } = storeToRefs(store)
     <!-- text-center: center the text of an element; 
      anitaliased: to render text using grayscale antialiasing: -->
     <header>
-      <div id="flashMessage" class="animation-fade" v-if="message">
+      <div class="animation-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
 
@@ -29,7 +29,7 @@ const { message } = storeToRefs(store)
 </template>
 
 <style>
-  nav {
+  /* nav {
     padding: 30px;
   }
 
@@ -40,11 +40,11 @@ const { message } = storeToRefs(store)
 
   nav a.router-link-exact-active {
     color: #42b983;
-  }
+  } */
 
-  h2{
+  /* h2{
     font-size: 20px;
-  }
+  } */
 
   /* @keyframes yellofade{
     from{

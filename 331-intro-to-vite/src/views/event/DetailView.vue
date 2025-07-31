@@ -15,7 +15,7 @@ const { detailMessage } = storeToRefs(store)
 </script>
 
 <template>
-    <div id="flashMessage" v-if="detailMessage">
+    <div class="animation-fade" v-if="detailMessage">
         <h4>{{ detailMessage }}</h4>
     </div>
 
@@ -24,7 +24,7 @@ const { detailMessage } = storeToRefs(store)
 </template>
 
 <style>
-  @keyframes yellofade{
+  /* @keyframes yellofade{
     from{
       background-color: yellow;
     }
@@ -35,5 +35,5 @@ const { detailMessage } = storeToRefs(store)
 
   #flashMessage {
     animation: yellofade 3s ease-in-out;
-  }
+  } */
 </style>

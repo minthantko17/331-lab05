@@ -21,15 +21,15 @@ onMounted(()=>{
 <template>
   <h1>Events For Good</h1>
   
-  <div class="events">
+  <div class="flex flex-col items-center">
     <StudentInfoCard v-for="student in students" :key="student.id" :student="student" />
   </div>
 </template>
 
 <style scoped>
-  .events{
+  /* .events{
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
 </style>
