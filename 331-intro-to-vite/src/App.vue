@@ -12,16 +12,11 @@ const { message } = storeToRefs(store)
     <!-- text-center: center the text of an element; 
      anitaliased: to render text using grayscale antialiasing: -->
     <header>
-      <div id="flashMessage" v-if="message">
+      <div id="flashMessage" class="animation-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
 
       <div class="wrapper">
-        <!-- <nav>
-          <RouterLink :to="{ name: 'event-list-view' }">Event</RouterLink> |
-          <RouterLink :to="{ name: 'about' }">About</RouterLink> |
-          <RouterLink :to="{ name: 'info' }">Info</RouterLink>
-        </nav> -->
         <nav class="py-6">
           <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Event</RouterLink> |
           <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink> |
@@ -51,7 +46,7 @@ const { message } = storeToRefs(store)
     font-size: 20px;
   }
 
-  @keyframes yellofade{
+  /* @keyframes yellofade{
     from{
       background-color: yellow;
     }
@@ -62,5 +57,5 @@ const { message } = storeToRefs(store)
 
   #flashMessage {
     animation: yellofade 3s ease-in-out;
-  }
+  } */
 </style>
