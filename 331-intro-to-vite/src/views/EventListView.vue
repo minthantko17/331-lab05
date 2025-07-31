@@ -48,7 +48,7 @@ onMounted(()=>{
   <input type="number" min="1" max="3" v-model="perPage" />
   <br><br>
   
-  <div class="events">
+  <div class="flex flex-col items-center">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
     <br><br><br><br>
     <EventCard2 v-for="event in events" :key="event.id" :event="event" />
@@ -76,12 +76,6 @@ onMounted(()=>{
 </template>
 
 <style scoped>
-  .events{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .pagination{
     display: flex;
     width: 290px;
